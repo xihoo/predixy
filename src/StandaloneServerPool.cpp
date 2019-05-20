@@ -97,7 +97,7 @@ Server* StandaloneServerPool::getServer(Handler* h, Request* req, const String& 
         case Distribution::Modula:
             {
                 long idx = mHash.hash(key.data(), key.length(), mHashTag);
-                logWarn("hash key %s, idx : %d", key.data(), idx)
+                logWarn("hash key %s, idx : %d", key.data(), idx);
                 idx %= mGroupPool.size();
                 return mGroupPool[idx]->getServer(h, req);
             }
